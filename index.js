@@ -89,7 +89,7 @@ app.get('/maps/sitemap.xml', async function(req, res, next){
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://goldman:kVZmxjW5xdrb!4a@cluster0.g2rfq.mongodb.net/posts', {
+        await mongoose.connect('mongodb+srv://hvarts:7990911qw@cluster0.zzmxf.mongodb.net/posts', {
         useNewUrlParser: true,
         useFindAndModify: false,
         useUnifiedTopology: true
