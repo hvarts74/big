@@ -1,4 +1,5 @@
 const express = require('express')
+const compression = require('compression')
 const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const Post = require('./models/post')
@@ -6,6 +7,13 @@ const Post = require('./models/post')
 const PORT = process.env.PORT || 80
 
 const app = express()
+
+app.use(compression({
+    // Сжимаем HTTP ответы, тело которых длиннее одного байта
+    threshold: 1,
+    // Сжимаем HTTP ответы независимо от их mime-типа
+    filter: function() {return true;}
+})); 
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
